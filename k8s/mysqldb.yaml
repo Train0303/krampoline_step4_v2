@@ -20,10 +20,11 @@ spec:
             - name: TZ
               value: Asia/Seoul
             - name: MYSQL_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mysql-secret
-                  key: PASSWORD
+              value: root
+              # valueFrom:
+              #   secretKeyRef:
+              #     name: mysql-secret
+              #     key: PASSWORD
             - name: MYSQL_DATABASE
               value: linknamu
             - name: MYSQL_DISABLE_UPGRADE_BACKUP

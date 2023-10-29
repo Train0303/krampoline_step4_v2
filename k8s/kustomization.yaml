@@ -3,7 +3,7 @@ resources:
   - nginx.yaml
   - mysqldb.yaml
   - backend.yaml
-  # - frontend.yamlkube
+  # - frontend.yaml
   - redis.yaml
 configMapGenerator:
   - name: nginx
