@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: mysqldb
-          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_a548cd9d92cf
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_3fa67196fd37
           env:
             - name: TZ
               value: Asia/Seoul
