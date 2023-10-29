@@ -24,10 +24,16 @@ spec:
               value: jdbc:mysql://mysqldb:3306/linknamu
               
             - name: DATABASE_PASSWORD
-              value: root
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: PASSWORD
               
             - name: AES_SECRET_KEY
-              value: 9a8f7e6d5c4b3a291b0c9d8e7f6a5b4c
+              valueFrom:
+                secretKeyRef:
+                  name: spring-secret
+                  key: AES_SECRET_KEY
                   
           resources:
             requests:
