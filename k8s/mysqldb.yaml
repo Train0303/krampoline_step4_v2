@@ -15,16 +15,12 @@ spec:
     spec:
       containers:
         - name: mysqldb
-          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_cdaf33589e62
+          image: mysql
           env:
             - name: TZ
               value: Asia/Seoul
             - name: MYSQL_ROOT_PASSWORD
               value: root
-              # valueFrom:
-              #   secretKeyRef:
-              #     name: mysql-secret
-              #     key: PASSWORD
             - name: MYSQL_DATABASE
               value: linknamu
             - name: MYSQL_DISABLE_UPGRADE_BACKUP
