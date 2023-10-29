@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: mysqldb
-          image: mysql/mysql-server:8.0.27
+          image: mysql
           
           env:
             - name: TZ
