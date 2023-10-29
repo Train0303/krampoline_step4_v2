@@ -16,34 +16,26 @@ spec:
       containers:
         - name: mysqldb
           image: mysql
-          
           env:
             - name: TZ
               value: Asia/Seoul
-              
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
-                  secretKeyRef:
-                      name: mysql-secret
-                      key: PASSWORD
-              
-              
+                secretKeyRef:
+                  name: mysql-secret
+                  key: PASSWORD
             - name: MYSQL_DATABASE
               value: linknamu
-              
             - name: MYSQL_DISABLE_UPGRADE_BACKUP
               value: '1'
-              
             - name: MYSQLD_INNODB_AUTOINC_LOCK_MODE
               value: '0'
-              
           volumeMounts:
             - mountPath: /var/lib/mysql
               name: data
               subPath: mysql
             - mountPath: /docker-entrypoint-initdb.d
               name: init-db
-              
           resources:
             limits:
               memory: 1Gi
@@ -54,7 +46,6 @@ spec:
             - name: init-db
               configMap:
                 name: init-db
-                
   volumeClaimTemplates:
     - metadata:
         name: data
