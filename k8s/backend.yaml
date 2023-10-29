@@ -20,9 +20,9 @@ spec:
             - name: TZ
               value: Asia/Seoul
             - name: DATABASE_URI
-              value: jdbc:mysql://mysqldb:3306/linknamu
+              value: jdbc:mysql://mysqldb:3306/krampoline
             - name: DATABASE_PASSWORD
-              value: linknamu12!
+              value: root
             - name: AES_SECRET_KEY
               value: 9a8f7e6d5c4b3a291b0c9d8e7f6a5b4c
           resources:
