@@ -28,7 +28,16 @@ spec:
 
             - name: MYSQL_DATABASE
               value: linknamu
-
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: USERNAME
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: PASSWORD
             - name: MYSQL_DISABLE_UPGRADE_BACKUP
               value: '1'
 
