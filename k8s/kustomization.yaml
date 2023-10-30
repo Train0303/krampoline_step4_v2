@@ -1,7 +1,7 @@
 namespace: default
 resources:
   - nginx.yaml
-  - mysqldb.yaml
+  - mysql.yaml
   - backend.yaml
   - redis.yaml
 configMapGenerator:

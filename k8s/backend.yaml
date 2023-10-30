@@ -21,7 +21,7 @@ spec:
               value: Asia/Seoul
               
             - name: DATABASE_URI
-              value: jdbc:mysql://mysqldb:3306/linknamu
+              value: jdbc:mysql://mysql:3306/linknamu
               
             - name: DATABASE_PASSWORD
               valueFrom:
