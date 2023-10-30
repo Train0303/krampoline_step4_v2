@@ -15,15 +15,13 @@ spec:
     spec:
       containers:
         - name: mysqldb
+          # 여러분의 mysqldb image 주소를 입력해주세요.
           image: mysql
           env:
             - name: TZ
               value: Asia/Seoul
             - name: MYSQL_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mysql-secret
-                  key: PASSWORD
+              value: linknamu12!
             - name: MYSQL_DATABASE
               value: linknamu
             - name: MYSQL_DISABLE_UPGRADE_BACKUP
@@ -42,10 +40,10 @@ spec:
           readinessProbe:
             tcpSocket:
               port: 3306
-          volumes:
-            - name: init-db
-              configMap:
-                name: init-db
+      volumes:
+        - name: init-db
+          configMap:
+            name: init-db
   volumeClaimTemplates:
     - metadata:
         name: data
