@@ -1,5 +1,5 @@
 CREATE SCHEMA IF NOT EXISTS `linknamu` DEFAULT CHARACTER SET utf8mb4;
 
-GRANT ALL ON *.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
-GRANT ALL ON linknamu.* TO 'root'@'%';
+create user root@'%' identified by 'root'
+GRANT ALL ON linknamu.* TO root@'%';
 FLUSH PRIVILEGES;
