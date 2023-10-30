@@ -1,5 +1,5 @@
 CREATE SCHEMA IF NOT EXISTS `linknamu` DEFAULT CHARACTER SET utf8mb4;
 
-GRANT ALL ON *.* TO 'root'@'%' WITH GRANT OPTION;
-GRANT ALL ON linknamu.* TO 'root'@'%';
+GRANT ALL ON *.* TO 'root'@'localhost' IDENTIFIED BY 'linknamu12!' WITH GRANT OPTION;
+GRANT ALL ON linknamu.* TO 'root'@'localhost';
 FLUSH PRIVILEGES;
