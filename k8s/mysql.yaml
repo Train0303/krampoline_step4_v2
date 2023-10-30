@@ -40,7 +40,8 @@ spec:
                   key: PASSWORD
             - name: MYSQL_DISABLE_UPGRADE_BACKUP
               value: '1'
-
+            - name: MYSQLD_INNODB_AUTOINC_LOCK_MODE
+              value: '0'
           volumeMounts:
             - mountPath: /docker-entrypoint-initdb.d
               name: init-db
