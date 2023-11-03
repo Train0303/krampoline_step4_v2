@@ -23,6 +23,12 @@ spec:
             - name: DATABASE_URI
               value: jdbc:mysql://mysql:3306/linknamu?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false&allowPublicKeyRetrieval=true
               
+            - name: DATABASE_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: USERNAME
+                  
             - name: DATABASE_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -34,7 +40,38 @@ spec:
                 secretKeyRef:
                   name: spring-secret
                   key: AES_SECRET_KEY
+            
+            - name: ACCESS_JWT_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: spring-secret
+                  key: ACCESS_JWT_SECRET_KEY
                   
+            - name: REFRESH_JWT_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: spring-secret
+                  key: REFRESH_JWT_SECRET_KEY
+            
+            - name: NOTION_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: notion
+                  key: NOTION_CLIENT_ID
+                  
+            - name: NOTION_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: notion
+                  key: NOTION_SECRET
+            
+            - name: NOTION_URL
+              valueFrom:
+                secretKeyRef:
+                  name: notion
+                  key: NOTION_URL
+            
+            
           resources:
             requests:
               memory: 1Gi
