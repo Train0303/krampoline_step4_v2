@@ -65,11 +65,11 @@ spec:
                   name: notion
                   key: NOTION_SECRET
             
-            - name: NOTION_URL
+            - name: NOTION_REDIRECT_URI
               valueFrom:
                 secretKeyRef:
                   name: notion
-                  key: NOTION_URL
+                  key: NOTION_REDIRECT_URI
             
             
           resources:
