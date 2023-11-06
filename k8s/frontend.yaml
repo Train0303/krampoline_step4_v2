@@ -35,7 +35,7 @@ spec:
                 secretKeyRef:
                   name: react-secret
                   key: REACT_APP_GOOGLE_TOKEN
-
+          command: ["serve", "-s", "build"]
 ---
 apiVersion: v1
 kind: Service
